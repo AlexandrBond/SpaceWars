@@ -194,7 +194,7 @@ function GenerateBonus() {
     console.log('bonusIndex: ', bonusIndex); 
     var BonusY = 0;
     var BonusX = parseInt((Math.random() * (570 + 1)), 10);
-   
+
     bonus.src = bonusSrc[bonusIndex]//"img/bonus_sheet.png";
 
     BonusArr = [BonusX,BonusY];
@@ -262,20 +262,21 @@ function DeleteBullets() {
 function DeleteBonus() {
     if(BonusArr[1] === HeroY- HeroW){
         if (BonusArr[0] + 40 >= HeroX && BonusArr[0] <= HeroX + HeroH)
-        
         {
-            //console.log('BonusArrEND: ', BonusArr,"HeroY = ",HeroY,'HeroX',HeroX);
-            //EnemyArr
             switch(bonusIndex){
-
-case 0: enemy = boom; setTimeout(()=>EnemyArr = [],300); /*enemy.src = "img/enemy.png"*/;   break;
-                case 1: scores += 100; break;
+            case 0:  EnemyArr = []; break;
+            case 1: scores += 100; break;
+            case 2:// clearInterval(enemiesLoop);
+           // console.log('enemiesLoop!!!: ', enemiesLoop);
+            /*enemiesLoop = setInterval(GenerateEnemies, level * 2000);; 
+            */
+           // enemiesLoop = setInterval(GenerateEnemies, level * 1000);
+            break;
             }
-            setTimeout(()=>enemy.src = "img/enemy.png",200);
+            
             BonusArr.splice(0,2);
             bonussound.play();
         }
-      //  enemy.src = "img/enemy.png"
     }
 }
 // Чтение клавы
@@ -345,9 +346,10 @@ function checkReStart(){
         gameFonSound.pause() ;   
        }  
        
-       Start();
+       Start();  
 }
-document.onload = Start();
+//document.getElementById("start").onclick = Start;
+//document.onload = Start();
 document.addEventListener("mousemove", mouseMoveHandler, false);
 document.addEventListener("click", zz); 
-document.getElementById("restart").onclick = checkReStart;//Start;
+document.getElementById("start").onclick = checkReStart;//Start;
