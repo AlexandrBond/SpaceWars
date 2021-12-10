@@ -3,11 +3,11 @@
     height:600px;
     margin: 0 auto;
     display:block;
-    background-color:gray;
+  background-image: url(../img/fon1.jpg)
+   
 }
 
 body{
-   /* background-color:black;*/
    background-size: cover;
    background-image: url(../img/fon1.jpg)  ;
 }
