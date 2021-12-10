@@ -169,7 +169,7 @@ function drawAll() {
         clearInterval(gameLoop);
         clearInterval(enemiesLoop);
         clearInterval(bonusLoop);
-        document.getElementById("restart").disabled = false; 
+        document.getElementById("start").disabled = false; 
     }; 
 };
 
