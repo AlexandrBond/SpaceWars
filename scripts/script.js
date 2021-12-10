@@ -338,7 +338,7 @@ function Start() {
     gameFonSound.autoplay = true;
     gameFonSound.volume = .4;
     drawGameCanvas();
-    document.getElementById("restart").disabled = true; 
+    document.getElementById("start").disabled = true; 
 };
 // рестарт
 function checkReStart(){
